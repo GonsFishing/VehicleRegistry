@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.625, 8.5" name="AzureDataBaseAccess">
+  <DataContextMoniker Name="/AzureDataBaseAccessDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f68b3d96-ab01-496f-8da3-e2c0ece29720" absoluteBounds="2.75, 3.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/AzureDataBaseAccessDataContext/Car" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6fd98d3e-a8e1-43aa-a903-36928c93b38e" absoluteBounds="2.765, 3.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2763d6f3-fe89-4a50-a89f-cbf6ced5473f" absoluteBounds="6.625, 4.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AzureDataBaseAccessDataContext/Car_CarService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b2e45e39-49cd-4eee-9c47-48b891a2a200" absoluteBounds="6.64, 4.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.75 : 4.94314697265625); (6.625 : 4.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AzureDataBaseAccessDataContext/Car/Car_Car_CarService" />
+      <nodes>
+        <classShapeMoniker Id="f68b3d96-ab01-496f-8da3-e2c0ece29720" />
+        <classShapeMoniker Id="2763d6f3-fe89-4a50-a89f-cbf6ced5473f" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d32eb5b1-3e07-4faa-bdd4-b2ec01de2c37" absoluteBounds="11.375, 4.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AzureDataBaseAccessDataContext/CarService" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5df241a-b396-4f1e-8456-6a4f43a56d5f" absoluteBounds="11.39, 5.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.375 : 5.25564697265625); (8.625 : 5.25564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AzureDataBaseAccessDataContext/CarService/CarService_Car_CarService" />
+      <nodes>
+        <classShapeMoniker Id="d32eb5b1-3e07-4faa-bdd4-b2ec01de2c37" />
+        <classShapeMoniker Id="2763d6f3-fe89-4a50-a89f-cbf6ced5473f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

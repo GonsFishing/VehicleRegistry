@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="skolprojekt2020DB" Class="AzureDataBaseAccessDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=skoldbserver.database.windows.net;Initial Catalog=skolprojekt2020DB;User ID=dbadmin" SettingsObjectName="CarRegister.Repo.Properties.Settings" SettingsPropertyName="skolprojekt2020DBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Car" Member="Cars">
+    <Type Name="Car">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CarBrand" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CarType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CarWeight" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Year" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LicensePlateNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsYearlyFeePaid" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CarTrafficReady" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Car_Car_CarService" Member="Car_CarServices" ThisKey="ID" OtherKey="CarID" Type="Car_CarService" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Car_CarService" Member="Car_CarServices">
+    <Type Name="Car_CarService">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CarID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CarServiceID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Car_Car_CarService" Member="Car" ThisKey="CarID" OtherKey="ID" Type="Car" IsForeignKey="true" />
+      <Association Name="CarService_Car_CarService" Member="CarService" ThisKey="CarServiceID" OtherKey="ID" Type="CarService" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CarService" Member="CarServices">
+    <Type Name="CarService">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsServiceCompleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ServiceInfo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="CarService_Car_CarService" Member="Car_CarServices" ThisKey="ID" OtherKey="CarServiceID" Type="Car_CarService" />
+    </Type>
+  </Table>
+</Database>

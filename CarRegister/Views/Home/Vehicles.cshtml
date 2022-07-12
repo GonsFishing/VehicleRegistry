@@ -1,0 +1,68 @@
+﻿@model IEnumerable<CarRegister.Models.ListofVehicleModel>
+
+@{
+    ViewBag.Title = "Vehicle List";
+}
+
+<h2>getListofCars</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LicencePlateNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LicencePlateNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Updatevehicle", new
+                {
+                        id = item.Id,
+                        model = item.Model,
+                        year = item.Year,
+                        Brand = item.Brand,
+                        LicencePlateNumber = item.LicencePlateNumber,
+                        weight = item.Weight,
+                        type = item.Type
+               })
+                @Html.ActionLink("Details", "DetailVehicle", new { VehicleId = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteVehicle", new { id = item.Id, LicencePlateNumber = item.LicencePlateNumber})
+            </td>
+        </tr>
+    }
+</table>
